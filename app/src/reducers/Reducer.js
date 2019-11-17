@@ -10,6 +10,13 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case "SUBMIT":
       return [...state, action.payload];
+    case "COMPLETE?":
+      return state.map((item) => {
+        if (action.payload === item.id) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      });
     default:
       return state;
   }

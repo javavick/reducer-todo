@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { initialState, reducer } from "./reducers/Reducer.js";
 import "./App.css";
 
@@ -10,10 +10,14 @@ import Form from "./components/Form.js";
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
+
   return (
     <div className="App">
       <Header />
-      <TodoMap state={state} />
+      <TodoMap state={state} dispatch={dispatch} />
       <Form state={state} dispatch={dispatch} />
     </div>
   );

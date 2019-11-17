@@ -23,7 +23,6 @@ const FormikTodoForm = withFormik({
   }),
 
   handleSubmit(values, { props, resetForm }) {
-    console.log(props.state);
     props.dispatch({
       type: "SUBMIT",
       payload: { ...values, completed: false, id: Date.now() }
