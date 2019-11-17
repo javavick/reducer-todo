@@ -19,6 +19,14 @@ function App() {
       <Header />
       <TodoMap state={state} dispatch={dispatch} />
       <Form state={state} dispatch={dispatch} />
+      <br />
+      <button
+        onClick={() => {
+          dispatch({ type: "CLEAR" });
+        }}
+      >
+        Clear Completed
+      </button>
     </div>
   );
 }
