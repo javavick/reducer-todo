@@ -4,11 +4,13 @@ import "./App.css";
 
 // Components
 import Header from "./components/Header.js";
+import TodoMap from "./components/TodoMap.js";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <TodoMap />
     </div>
   );
 }
